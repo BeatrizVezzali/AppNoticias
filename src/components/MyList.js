@@ -52,10 +52,10 @@ export default class MyList extends Component {
         return ( this.state.data.map((u) => {
           return ( 
             <TouchableOpacity key={u.id}>
-                    <View style={{ padding: 10 }}>
-                        <Image source={require("../src/images/" + u.image)} ></Image>
-                       <Text style={{ fontSize: 15}}>{u.title}</Text>        
-                       <Text>{u.text}</Text>
+                    <View style={styles.itemContainer}>
+                        <Image source={u.image} style={styles.image}></Image>
+                       <Text style={styles.title}>{u.title}</Text>        
+                       <Text style={styles.text}>{u.text}</Text>
                     </View>
              </TouchableOpacity>);
             })
@@ -71,5 +71,31 @@ export default class MyList extends Component {
           </ScrollView>
           );
       }
-
 }
+
+const styles = StyleSheet.create({
+    itemContainer: {
+        alignContent: "center",
+        alignItems: "center",
+        padding: 10,
+        backgroundColor: '#7b4397',
+        marginBottom: 10,
+        borderRadius: 5,
+    },
+    image: {
+        width: 200,
+        height: 150,
+        resizeMode: 'cover',
+        marginBottom: 10,
+        borderRadius: 5,
+    },
+    title: {
+        color: "black",
+        fontSize: 25,
+        fontWeight: 'bold',
+    },
+    text: {
+        color: "lightBlack",
+        fontSize: 24,
+    },
+});
