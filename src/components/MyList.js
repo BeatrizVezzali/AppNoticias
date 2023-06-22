@@ -10,7 +10,9 @@ export default class MyList extends Component {
        hasMore: true
      }
      
-     componentWillMount() { this.getListOfPictures(); };
+     componentWillMount() {
+        this.getListOfData();
+     }
 
      getListOfData = () => {
         if (this.state.loading) { return; }
@@ -78,7 +80,7 @@ const styles = StyleSheet.create({
         alignContent: "center",
         alignItems: "center",
         padding: 10,
-        backgroundColor: '#7b4397',
+        backgroundColor: 'white',
         marginBottom: 10,
         borderRadius: 5,
     },
